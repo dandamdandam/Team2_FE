@@ -13,46 +13,49 @@ import ProductDetail from "@/pages/ProductDetail";
 import ProductList from "@/pages/ProductList";
 import { RouterPath } from "@/utils/path";
 
-const router = createBrowserRouter([
-  {
-    path: RouterPath.root,
-    element: <Layout />,
-    children: [
-      {
-        path: RouterPath.home,
-        element: <Home />,
-      },
-      {
-        path: RouterPath.productList,
-        element: <ProductList />,
-      },
-      {
-        path: RouterPath.columnList,
-        element: <ColumnList />,
-      },
-      {
-        path: RouterPath.columnDetail,
-        element: <ColumnDetail />,
-      },
-      {
-        path: RouterPath.productDetail,
-        element: <ProductDetail />,
-      },
-      {
-        path: RouterPath.myAccount,
-        element: <MyAccount />,
-      },
-      {
-        path: RouterPath.login,
-        element: <Login />,
-      },
-      {
-        path: RouterPath.notFound,
-        element: <NotFound />,
-      },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: RouterPath.root,
+      element: <Layout />,
+      children: [
+        {
+          path: RouterPath.home,
+          element: <Home />,
+        },
+        {
+          path: RouterPath.productList,
+          element: <ProductList />,
+        },
+        {
+          path: RouterPath.columnList,
+          element: <ColumnList />,
+        },
+        {
+          path: RouterPath.columnDetail,
+          element: <ColumnDetail />,
+        },
+        {
+          path: RouterPath.productDetail,
+          element: <ProductDetail />,
+        },
+        {
+          path: RouterPath.myAccount,
+          element: <MyAccount />,
+        },
+        {
+          path: RouterPath.login,
+          element: <Login />,
+        },
+        {
+          path: RouterPath.notFound,
+          element: <NotFound />,
+        },
+      ],
+    },
+  ],
+  { basename: import.meta.env.PUBLIC_URL },
+);
 
 /**
  * The main application component.
