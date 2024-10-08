@@ -13,46 +13,49 @@ import ProductDetail from "@/pages/ProductDetail";
 import ProductList from "@/pages/ProductList";
 import { RouterPath } from "@/utils/path";
 
-const router = createBrowserRouter([
-  {
-    path: RouterPath.root,
-    element: <Layout />,
-    children: [
-      {
-        path: RouterPath.home,
-        element: <Home />,
-      },
-      {
-        path: RouterPath.productList,
-        element: <ProductList />,
-      },
-      {
-        path: RouterPath.columnList,
-        element: <ColumnList />,
-      },
-      {
-        path: RouterPath.columnDetail,
-        element: <ColumnDetail />,
-      },
-      {
-        path: RouterPath.productDetail,
-        element: <ProductDetail />,
-      },
-      {
-        path: RouterPath.myAccount,
-        element: <MyAccount />,
-      },
-      {
-        path: RouterPath.login,
-        element: <Login />,
-      },
-      {
-        path: RouterPath.notFound,
-        element: <NotFound />,
-      },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: RouterPath.root,
+      element: <Layout />,
+      children: [
+        {
+          path: RouterPath.home,
+          element: <Home />,
+        },
+        {
+          path: RouterPath.productList,
+          element: <ProductList />,
+        },
+        {
+          path: RouterPath.columnList,
+          element: <ColumnList />,
+        },
+        {
+          path: RouterPath.columnDetail,
+          element: <ColumnDetail />,
+        },
+        {
+          path: RouterPath.productDetail,
+          element: <ProductDetail />,
+        },
+        {
+          path: RouterPath.myAccount,
+          element: <MyAccount />,
+        },
+        {
+          path: RouterPath.login,
+          element: <Login />,
+        },
+        {
+          path: RouterPath.notFound,
+          element: <NotFound />,
+        },
+      ],
+    },
+  ],
+  { basename: import.meta.env.PUBLIC_URL },
+);
 
 /**
  * The main application component.
@@ -66,12 +69,16 @@ function App(): JSX.Element {
           :root {
             --color-main: #89a06b;
             --color-side: rgba(0, 66, 47, 43);
+            --color-background: #f7ffef;
             --color-gray: #aaa;
             --color-black: #2c2c2c;
           }
           p,
           li {
             line-height: 120%;
+          }
+          body {
+            color: var(--color-black);
           }
         `}
       />
