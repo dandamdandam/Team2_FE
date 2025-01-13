@@ -35,7 +35,7 @@ const initInstance = (config: AxiosRequestConfig, authContained: boolean) => {
   instance.interceptors.response.use(
     (response) => response,
     (error) => {
-      if (error.response.status === 401) {
+      if (authContained && error.response?.status === 401) {
         if (refreshTokenStorage.get()) {
           // refresh 수행
           return axios
