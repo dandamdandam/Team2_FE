@@ -49,7 +49,7 @@ export default function Bottom() {
     fetchInstance(true)
       .get(`/api/columns/likes?articleId=${columnId}`)
       .then((res) => {
-        setIsLiked(res.data.isliked);
+        setIsLiked(res.data.isLiked);
       });
   }, [columnId]);
   return (
